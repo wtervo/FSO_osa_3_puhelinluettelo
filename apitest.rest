@@ -1,6 +1,6 @@
 //delete http://localhost:3001/persons/5
 
-post http://localhost:3001/persons
+post https://rocky-gorge-10542.herokuapp.com/persons
 Content-Type: application/json
 
 {

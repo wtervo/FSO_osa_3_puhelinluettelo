@@ -6,6 +6,7 @@ const cors = require("cors")
 
 morgan.token("body", (req, res) => {return JSON.stringify(req.body)})
 
+app.use(express.static("build"))
 app.use(cors())
 app.use(bodyParser.json())
 app.use(morgan(":method :url :status :response-time ms - :body"))
@@ -42,15 +43,15 @@ const getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
-app.get("/", (request, response) => {
+app.get("/api/", (request, response) => {
     response.send("<h1>There's some phonenumbers here</h1>")
 })
 
-app.get("/persons", (request, response) => {
+app.get("/api/persons", (request, response) => {
     response.json(persons)
 })
 
-app.get("/info", (request, response) => {
+app.get("/api/info", (request, response) => {
     const personNum = persons.length
     time = new Date()
     response.send(
@@ -59,7 +60,7 @@ app.get("/info", (request, response) => {
     )
 })
 
-app.get("/persons/:id", (request, response) => {
+app.get("/api/persons/:id", (request, response) => {
     const id = Number(request.params.id)
     const person = persons.find(person => person.id === id)
     if (person) {
@@ -70,7 +71,7 @@ app.get("/persons/:id", (request, response) => {
     }
 })
 
-app.post("/persons", (request, response) => {
+app.post("/api/persons", (request, response) => {
     const body = request.body
   
     if (!body.name || !body.number) {
@@ -95,7 +96,7 @@ app.post("/persons", (request, response) => {
     response.json(person)
 })
 
-app.delete("/persons/:id", (request, response) => {
+app.delete("/api/persons/:id", (request, response) => {
     const id = Number(request.params.id)
     persons = persons.filter(person => person.id !== id)
   
