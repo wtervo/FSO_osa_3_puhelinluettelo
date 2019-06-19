@@ -1,0 +1,9 @@
+//delete http://localhost:3001/persons/5
+
+post http://localhost:3001/persons
+Content-Type: application/json
+
+{
+    "name": "tunturijäbä",
+    "number": "2131314123313"
+}
