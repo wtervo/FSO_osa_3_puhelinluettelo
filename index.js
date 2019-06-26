@@ -13,6 +13,8 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(morgan(":method :url :status :response-time ms - :body"))
 
+//this list is a remnant of old code
+//saved just in case
 let persons = [
     {
     "name": "Arto Hellas",
