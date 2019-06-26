@@ -141,6 +141,9 @@ app.use(errorHandler)
 
 const PORT = process.env.PORT
 
-app.listen(PORT || 3001, () => {
+//NOTE: the app works perfectly fine locally on port 3001
+//BUT not on Google Chrome for some reason
+//Microsoft Edge, for example, works just fine
+app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
