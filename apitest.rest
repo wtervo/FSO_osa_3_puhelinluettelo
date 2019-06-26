@@ -1,9 +1,30 @@
 //delete http://localhost:3001/persons/5
 
-post https://rocky-gorge-10542.herokuapp.com/persons
+# post https://rocky-gorge-10542.herokuapp.com/persons
+# Content-Type: application/json
+
+# {
+#     "name": "tunturijäbä",
+#     "number": "2131314123313"
+# }
+
+# get https://rocky-gorge-10542.herokuapp.com/api/persons
+
+post http://localhost:3001/api/persons
 Content-Type: application/json
 
 {
-    "name": "tunturijäbä",
-    "number": "2131314123313"
+    "name": "Jaskapaska",
+    "number": "21315413413"
 }
+
+
+# get http://localhost:3001/api/info
+
+# put http://localhost:3001/api/persons/5d122dfebe7bc9230c321548
+# Content-Type: application/json
+
+# {
+#     "name": "Partalapsi",
+#     "number": "2131314123313"
+# }
